@@ -1,0 +1,25 @@
+# Node dependencies
+node_modules/
+
+# Build output
+/public
+/dist
+/build
+
+# Hugo
+*.log
+*.patch
+gtags refractor
+
+# OS & editor artifacts
+.DS_Store
+.idea/
+*.swp
+*~
+*.md~
+
+# Tailwind / PostCSS caches
+/.cache/
+/.cache/
+tailwind.css
+main.css
