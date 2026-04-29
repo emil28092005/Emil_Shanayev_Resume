@@ -11,6 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,7 +37,7 @@ jobs:
         run: npm run build:css
 
       - name: Build site with Hugo
-        run: npm run build
+        run: hugo --minify
 
       - name: Verify Hugo output exists
         run: |
