@@ -9,7 +9,7 @@ node_modules/
 # Hugo
 *.log
 *.patch
-gtags refractor
+.hugo_build.lock
 
 # OS & editor artifacts
 .DS_Store
@@ -20,6 +20,4 @@ gtags refractor
 
 # Tailwind / PostCSS caches
 /.cache/
-/.cache/
-tailwind.css
-main.css
+assets/css/main.css

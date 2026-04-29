@@ -1,1 +1,38 @@
-["main ]  # Build on pushes to main\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Setup Hugo\n        uses: peaceiris/actions-hugo@v2\n        with:\n          hugo-version: 'latest'\n\n      - name: Set up Node.js for Tailwindcss\n        uses: actions/setup-node@v4\n        with:\n          node-version: '20'\n\n      - name: Install dependencies\n        run: npm install\n\n      - name: Build CSS asset\n        run: npm run build:css\n\n      - name: Build Hugo site\n        run: hugo --minify\n\n      - name: Deploy to GitHub Pages\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          github_pages_branch: gh-pages\n          keep_files: false\n          force_orphan: true\n          commit_message: Deploy Hugo site"]
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Set up Node.js for Tailwindcss
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build CSS asset
+        run: npm run build:css
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_pages_branch: gh-pages
+          keep_files: false
+          force_orphan: true
+          commit_message: Deploy Hugo site

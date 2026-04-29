@@ -1,1 +1,10 @@
-[['menu.main]]\n  name = "Resume"\n  url = "/resume/', 'weight = 1\n\n[[menu.main]]\n  name = "About"\n  url = "/about/', 'weight = 2\n\n[params]\n  author = "Emil Shanayev"\n  description = "DevOps & Backend Engineer"\n  keywords = ["DevOps', 'Backend', 'Go', 'Tailwind', 'Resume']]
+baseURL = "https://emil28092005.github.io/"
+languageCode = "ru"
+title = "Emil Shanayev"
+
+[params]
+  author = "Emil Shanayev"
+  description = "DevOps & Backend Engineer"
+  keywords = ["DevOps", "Backend", "Go", "Tailwind", "Resume"]
+  github = "https://github.com/emil28092005"
+  email = "emil28092005@gmail.com"
