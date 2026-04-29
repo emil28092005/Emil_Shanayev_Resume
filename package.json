@@ -1,1 +1,15 @@
-{'name': 'resume-website', 'version': '1.0.0', 'scripts': {'build:css': 'postcss assets/css/tailwind.css -o assets/css/main.css', 'build': 'hugo --minify'}, 'devDependencies': {'autoprefixer': '^10.4.20', 'postcss': '^8.4.38', 'tailwindcss': '^3.4.4'}}
+{
+  "name": "resume-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "postcss assets/css/tailwind.css -o assets/css/main.css",
+    "build": "npm run build:css && hugo --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.12",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.4"
+  }
+}
