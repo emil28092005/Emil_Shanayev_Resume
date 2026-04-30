@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
     './app/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -22,23 +23,37 @@ module.exports = {
         },
       },
       fontFamily: {
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       animation: {
-        blink: 'blink 1.1s step-end infinite',
+        blink: 'blink 1s step-end infinite',
         'fade-up': 'fadeUp 0.6s ease forwards',
+        'draw-line': 'drawLine 0.8s ease forwards',
       },
       keyframes: {
         blink: {
           '0%, 100%': { opacity: '1' },
-          '50%':      { opacity: '0' },
+          '50%': { opacity: '0' },
         },
         fadeUp: {
           from: { opacity: '0', transform: 'translateY(12px)' },
           to:   { opacity: '1', transform: 'translateY(0)' },
+        },
+        drawLine: {
+          from: { width: '0' },
+          to:   { width: '100%' },
+        },
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            fontFamily: 'var(--font-jetbrains), monospace',
+          },
         },
       },
     },
   },
   plugins: [],
 }
+
+export default config
