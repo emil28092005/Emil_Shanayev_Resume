@@ -11,37 +11,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install markdownlint and HTMLHint
-        run: npm install -D markdownlint-cli htmlhint
+      - name: Build
+        run: npm run build
 
-      - name: Lint markdown files
-        run: npx markdownlint "**/*.md" --config .markdownlint.json || echo "No markdownlint config – skipping"
-
-      - name: Lint generated HTML (if any)
-        run: npx htmlhint "**/public/**/*.html" || echo "No HTML to lint yet"
-
-      - name: Build CSS
-        run: npm run build:css
-
-      - name: Build site with Hugo
-        run: hugo --minify
-
-      - name: Verify Hugo output exists
+      - name: Verify output exists
         run: |
-          if [ ! -d "public" ]; then
-            echo "public/ not found"
+          if [ ! -d "out" ]; then
+            echo "out/ not found"
             exit 1
           fi
