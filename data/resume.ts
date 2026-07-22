@@ -8,6 +8,7 @@ export const resume = {
   contacts: [
     { label: 'GitHub', value: 'emil28092005', href: 'https://github.com/emil28092005' },
     { label: 'Email', value: 'emil28092005@gmail.com', href: 'mailto:emil28092005@gmail.com' },
+    { label: 'Email', value: 'emil28092005@yandex.ru', href: 'mailto:emil28092005@yandex.ru' },
     { label: 'Telegram', value: '@emilshanaty', href: 'https://t.me/emilshanaty' },
   ],
   capabilities: [
@@ -84,8 +85,16 @@ export const resume = {
     { name: 'Imagen', note: 'Local text-to-sprite MCP pipeline with rating workflow', href: 'https://github.com/emil28092005/Imagen' },
     { name: 'MoME', note: 'Sparse-gated personal memory plugin for Hermes Agent', href: 'https://github.com/emil28092005/hermes-plugin-mome' },
   ],
-  education: {
-    institution: 'Innopolis University',
-    program: 'Data Structures and Artificial Intelligence (DSAI)',
-  },
+  education: [
+    {
+      period: '2023—2025',
+      institution: 'Innopolis University',
+      program: 'Data Structures and Artificial Intelligence (DSAI)',
+    },
+    {
+      period: '2026—present',
+      institution: 'Central University',
+      program: 'Currently studying',
+    },
+  ],
 } as const

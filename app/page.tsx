@@ -1,6 +1,10 @@
 import { resume } from '@/data/resume'
 
-const Arrow = () => <span aria-hidden="true">↗</span>
+const ArrowIcon = () => (
+  <svg className="link-arrow" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M3 13 13 3M6 3h7v7" />
+  </svg>
+)
 
 export default function Home() {
   return (
@@ -24,8 +28,8 @@ export default function Home() {
         <h2>{resume.role}</h2>
         <p className="hero-copy">{resume.bio}</p>
         <div className="hero-actions">
-          <a className="button primary" href="#work">Selected work <span>↓</span></a>
-          <a className="button" href={resume.contacts[0].href} target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+          <a className="button primary" href="#work">Selected work</a>
+          <a className="button" href={resume.contacts[0].href} target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
         </div>
         <div className="hero-facts">
           <span><b>05</b> featured systems</span>
@@ -70,9 +74,9 @@ export default function Home() {
                 <div className="tag-list">{project.tech.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </div>
               <div className="project-links">
-                <a href={project.href} target="_blank" rel="noreferrer">Repository <Arrow /></a>
+                <a href={project.href} target="_blank" rel="noreferrer">Repository <ArrowIcon /></a>
                 {'secondaryHref' in project && project.secondaryHref && (
-                  <a href={project.secondaryHref} target="_blank" rel="noreferrer">memwalk <Arrow /></a>
+                  <a href={project.secondaryHref} target="_blank" rel="noreferrer">memwalk <ArrowIcon /></a>
                 )}
               </div>
             </article>
@@ -88,7 +92,7 @@ export default function Home() {
         <div className="tool-grid">
           {resume.tools.map((tool) => (
             <a href={tool.href} target="_blank" rel="noreferrer" key={tool.name}>
-              <div><strong>{tool.name}</strong><p>{tool.note}</p></div><Arrow />
+              <div><strong>{tool.name}</strong><p>{tool.note}</p></div><ArrowIcon />
             </a>
           ))}
         </div>
@@ -96,12 +100,15 @@ export default function Home() {
 
       <section className="about shell">
         <div className="section-heading">
-          <p>Education</p><span>Currently learning by building</span>
+          <p>Education</p><span>Learning by building</span>
         </div>
-        <div className="education">
-          <span>2024—present</span>
-          <div><h3>{resume.education.institution}</h3><p>{resume.education.program}</p></div>
-          <p className="education-note">Interests: scientific computing, AI systems, computer graphics and distributed infrastructure.</p>
+        <div className="education-list">
+          {resume.education.map((education) => (
+            <div className="education" key={education.institution}>
+              <span>{education.period}</span>
+              <div><h3>{education.institution}</h3><p>{education.program}</p></div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -111,7 +118,7 @@ export default function Home() {
         <div className="contact-grid">
           {resume.contacts.map((contact) => (
             <a href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" key={contact.label}>
-              <span>{contact.label}</span><strong>{contact.value}</strong><Arrow />
+              <span>{contact.label}</span><strong>{contact.value}</strong><ArrowIcon />
             </a>
           ))}
         </div>
