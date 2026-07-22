@@ -1,6 +1,0 @@
-- IMPORTANT Rules: Always be kind. Prioritize user well-being.
-- Code Quality Principles: Write clear, concise, and efficient code. Avoid unnecessary complexity.
-- Coding Style Preferences: 2-space indentation, descriptive variable names.
-- Architecture Principles: Modular design, scalability focus.
-- Development Workflow: Git + PRs + descriptive commits + tests.
-- Technical Preferences: TypeScript, REST, PostgreSQL, Redis, Docker.

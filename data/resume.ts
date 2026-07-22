@@ -1,112 +1,91 @@
 export const resume = {
   name: 'Emil Shanayev',
-  handle: 'emil28092005',
-  role: ['DevOps Engineer', 'Backend Developer', 'Infrastructure Nerd'],
-  bio: 'Building reliable systems from first principles. Specializing in Python/FastAPI, container orchestration, and Linux infrastructure. Student at Innopolis University (DSAI program).',
+  eyebrow: 'AI systems · scientific software · infrastructure',
+  role: 'AI Systems & Scientific Software Developer',
+  bio: 'I build technical products at the intersection of scientific computing, AI-native software and systems engineering — from molecular similarity tools to a Vulkan renderer and production-oriented backend infrastructure.',
   location: 'Russia',
-
+  availability: 'Open to internships, research collaborations and engineering projects',
   contacts: [
+    { label: 'GitHub', value: 'emil28092005', href: 'https://github.com/emil28092005' },
+    { label: 'Email', value: 'emil28092005@gmail.com', href: 'mailto:emil28092005@gmail.com' },
+    { label: 'Telegram', value: '@emilshanaty', href: 'https://t.me/emilshanaty' },
+  ],
+  capabilities: [
     {
-      label: 'GitHub',
-      handle: 'emil28092005',
-      href: 'https://github.com/emil28092005',
-      prefix: 'github.com/',
+      index: '01',
+      title: 'Scientific software',
+      text: 'Molecular data processing, cheminformatics workflows, numerical methods and reproducible command-line tools.',
+      stack: ['Python', 'RDKit', 'ChEMBL', 'NumPy', 'Flask'],
     },
     {
-      label: 'Email',
-      handle: 'emil28092005@gmail.com',
-      href: 'mailto:emil28092005@gmail.com',
-      prefix: '',
+      index: '02',
+      title: 'AI-native systems',
+      text: 'MCP integrations, local model tooling, persistent model state and human-in-the-loop workflows.',
+      stack: ['MCP', 'LLM APIs', 'PyTorch', 'SSM / Mamba', 'Computer Vision'],
     },
     {
-      label: 'Telegram',
-      handle: '@emilshanaty',
-      href: 'https://t.me/emilshanaty',
-      prefix: 't.me/',
+      index: '03',
+      title: 'Systems & infrastructure',
+      text: 'Performance-oriented engines, backend services and the infrastructure needed to ship and operate them.',
+      stack: ['C# / .NET', 'Vulkan', 'Go', 'Docker', 'Jenkins', 'Linux'],
     },
   ],
-
-  skills: [
-    {
-      category: 'SYSTEM',
-      items: ['Linux', 'Bash', 'SSH', 'Nginx', 'systemd', 'Vim'],
-    },
-    {
-      category: 'LANGUAGES',
-      items: ['Python', 'Go', 'TypeScript', 'JavaScript', 'Java', 'C#'],
-    },
-    {
-      category: 'BACKEND',
-      items: ['FastAPI', 'asyncio', 'PostgreSQL', 'Redis', 'SQLite'],
-    },
-    {
-      category: 'CONTAINERS',
-      items: ['Docker', 'Compose', 'Kubernetes', 'Helm', 'Harbor'],
-    },
-    {
-      category: 'CI / CD',
-      items: ['GitHub Actions', 'Jenkins', 'GitLab CI'],
-    },
-    {
-      category: 'CLOUD',
-      items: ['Yandex Cloud', 'VPS', 'Server Admin'],
-    },
-    {
-      category: 'AI / LLM',
-      items: ['OpenAI API', 'Claude API', 'LangChain', 'Perplexity'],
-    },
-    {
-      category: 'TOOLING',
-      items: ['Git', 'Agile', 'Scrum', 'Jira'],
-    },
-  ],
-
   projects: [
     {
-      id: '01',
-      title: 'FastAPI Async Platform',
-      description:
-        'High-performance async REST API built with FastAPI and PostgreSQL. Features Redis caching, Docker containerization, and Nginx reverse proxy on a Linux VPS.',
-      tech: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'Nginx'],
-      href: 'https://github.com/emil28092005',
-      status: 'deployed' as const,
+      number: '01',
+      name: 'Cortex Engine',
+      kind: 'AI-native 3D engine',
+      description: 'A 3D engine with a pure P/Invoke Vulkan 1.3 renderer, PBR shading, cubemap-array shadows, Jolt physics and Flecs ECS. An MCP interface exposes scene operations to AI agents, including object creation, transforms and screenshots.',
+      highlights: ['Pure Vulkan 1.3 backend', 'PBR + multi-light shadows', 'Playable FPS demo', '7 MCP scene tools'],
+      tech: ['C#', '.NET 9', 'Vulkan', 'SDL3', 'Jolt', 'Flecs', 'MCP'],
+      href: 'https://github.com/emil28092005/Cortex_Engine',
     },
     {
-      id: '02',
-      title: 'K8s Infrastructure',
-      description:
-        'Production-grade Kubernetes cluster with Helm chart management, Harbor private container registry, and full CI/CD automation via GitHub Actions.',
-      tech: ['Kubernetes', 'Helm', 'Harbor', 'GitHub Actions', 'Docker'],
-      href: 'https://github.com/emil28092005',
-      status: 'deployed' as const,
+      number: '02',
+      name: 'SciMesh',
+      kind: 'Scientific computing framework',
+      description: 'A local Python framework for exact molecular similarity search and sparse similarity-graph construction over ChEMBL-style datasets. It streams input data, bounds top-k memory use and avoids dense N×N similarity matrices.',
+      highlights: ['Morgan fingerprints', 'Exact Tanimoto search', 'Block-wise graph construction', 'Tested CLI package'],
+      tech: ['Python', 'RDKit', 'ChEMBL', 'Pytest'],
+      href: 'https://github.com/emil28092005/SciMesh',
     },
     {
-      id: '03',
-      title: 'Jenkins CI/CD Pipeline',
-      description:
-        'End-to-end automated pipeline — testing, Docker image builds, registry push, and zero-downtime rolling deployments on Linux servers.',
-      tech: ['Jenkins', 'Docker', 'Bash', 'Linux'],
-      href: 'https://github.com/emil28092005',
-      status: 'shipped' as const,
+      number: '03',
+      name: 'Bioportal Lab',
+      kind: 'Laboratory CV prototype',
+      description: 'A Russian-language prototype for microbiology workflows. PetriCount combines multi-scale computer-vision candidates, a Random Forest classifier and manual correction to support colony counting from Petri-dish images.',
+      highlights: ['Image upload workflow', 'Trainable CV baseline', 'Manual result correction', 'Local analysis API'],
+      tech: ['Python', 'Flask', 'OpenCV', 'scikit-learn', 'JavaScript'],
+      href: 'https://github.com/emil28092005/Bioportal-lab',
     },
     {
-      id: '04',
-      title: 'LLM API Microservice',
-      description:
-        'Microservice integrating OpenAI and Claude APIs with async task queuing, per-user rate limiting, and response caching to minimize costs.',
-      tech: ['Python', 'FastAPI', 'Redis', 'OpenAI API', 'Claude API'],
-      href: 'https://github.com/emil28092005',
-      status: 'wip' as const,
+      number: '04',
+      name: 'Shagram',
+      kind: 'Backend & DevOps system',
+      description: 'A real-time WebSocket chat used as an end-to-end infrastructure project: JWT authentication, SQLite persistence, containerized delivery, TLS termination and a Jenkins pipeline connected to a private Harbor registry.',
+      highlights: ['WebSocket rooms', 'JWT + origin validation', 'Multi-stage containers', 'Automated CI/CD on VPS'],
+      tech: ['Go', 'Gin', 'WebSocket', 'Docker', 'Nginx', 'Jenkins', 'Harbor'],
+      href: 'https://github.com/emil28092005/shagram',
+    },
+    {
+      number: '05',
+      name: 'Memba + memwalk',
+      kind: 'Experimental model memory',
+      description: 'An experimental stack for saving and restoring persistent state in SSM-based language models. memwalk builds on memba to digest codebases once, cache model state and answer later questions without repeatedly ingesting the same repository.',
+      highlights: ['Portable state snapshots', 'C and Python APIs', 'Manifest-based cache invalidation', 'MCP server for codebase queries'],
+      tech: ['C++', 'Python', 'CMake', 'llama.cpp', 'Mamba / SSM', 'MCP'],
+      href: 'https://github.com/emil28092005/Memba',
+      secondaryHref: 'https://github.com/emil28092005/memwalk',
     },
   ],
-
+  tools: [
+    { name: 'Soundgen', note: 'Rust-based 8-bit sound synthesis and feedback tooling', href: 'https://github.com/emil28092005/Soundgen' },
+    { name: 'KimiFleet', note: 'Visible multi-agent orchestrator over ACP and MCP', href: 'https://github.com/emil28092005/KimiFleet' },
+    { name: 'Imagen', note: 'Local text-to-sprite MCP pipeline with rating workflow', href: 'https://github.com/emil28092005/Imagen' },
+    { name: 'MoME', note: 'Sparse-gated personal memory plugin for Hermes Agent', href: 'https://github.com/emil28092005/hermes-plugin-mome' },
+  ],
   education: {
     institution: 'Innopolis University',
     program: 'Data Structures and Artificial Intelligence (DSAI)',
-    note: 'Product Management elective — A grade',
   },
 } as const
-
-export type Project = (typeof resume.projects)[number]
-export type SkillGroup = (typeof resume.skills)[number]
-export type Contact = (typeof resume.contacts)[number]
