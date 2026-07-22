@@ -5,6 +5,8 @@ const Arrow = () => <span aria-hidden="true">↗</span>
 export default function Home() {
   return (
     <main>
+      <div className="ambient ambient-one" aria-hidden="true" />
+      <div className="ambient ambient-two" aria-hidden="true" />
       <header className="nav shell">
         <a className="mark" href="#top" aria-label="Home">ES<span>/26</span></a>
         <nav aria-label="Main navigation">
@@ -16,6 +18,7 @@ export default function Home() {
 
       <section className="hero shell" id="top">
         <div className="hero-kicker"><span className="pulse" /> {resume.availability}</div>
+        <div className="hero-orbit" aria-hidden="true"><span>AI</span><i /></div>
         <p className="eyebrow">{resume.eyebrow}</p>
         <h1>{resume.name}</h1>
         <h2>{resume.role}</h2>
@@ -23,6 +26,10 @@ export default function Home() {
         <div className="hero-actions">
           <a className="button primary" href="#work">Selected work <span>↓</span></a>
           <a className="button" href={resume.contacts[0].href} target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+        </div>
+        <div className="hero-facts">
+          <span><b>05</b> featured systems</span>
+          <span><b>∞</b> curiosity for hard problems</span>
         </div>
         <div className="hero-index" aria-hidden="true">01—05</div>
       </section>
