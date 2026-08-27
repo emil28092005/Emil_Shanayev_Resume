@@ -76,7 +76,7 @@ export default function Home() {
               <div className="project-links">
                 <a href={project.href} target="_blank" rel="noreferrer">Repository <ArrowIcon /></a>
                 {'secondaryHref' in project && project.secondaryHref && (
-                  <a href={project.secondaryHref} target="_blank" rel="noreferrer">memwalk <ArrowIcon /></a>
+                  <a href={project.secondaryHref} target="_blank" rel="noreferrer">{'secondaryLabel' in project ? project.secondaryLabel : 'Related project'} <ArrowIcon /></a>
                 )}
               </div>
             </article>
