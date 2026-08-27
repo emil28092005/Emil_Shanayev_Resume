@@ -95,8 +95,8 @@ export const resume = {
     },
     {
       period: '2026—present',
-      institution: 'Central University',
-      program: 'Currently studying',
+      institution: 'HSE University',
+      program: '1st-year student · Bachelor’s programme',
     },
   ],
 } as const
